@@ -14,5 +14,6 @@ public class GuiTodo {
     public static void main(String[] args) {
     telaPrincipal telaPrincipal = new telaPrincipal();
      telaPrincipal.setVisible (true);
+     telaPrincipal.setLocationRelativeTo(null);
     }
 }
