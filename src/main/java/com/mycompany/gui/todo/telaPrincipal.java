@@ -47,8 +47,9 @@ public class telaPrincipal extends javax.swing.JFrame {
         sCrollPane1 = new javax.swing.JScrollPane();
         tb1 = new javax.swing.JTable();
 
-        inputDialog.setMinimumSize(new java.awt.Dimension(361, 172));
-        inputDialog.setPreferredSize(new java.awt.Dimension(361, 172));
+        inputDialog.setMinimumSize(new java.awt.Dimension(361, 272));
+        inputDialog.setPreferredSize(new java.awt.Dimension(361, 272));
+        inputDialog.setResizable(false);
 
         jButton5.setText("Cancelar");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -138,7 +139,7 @@ public class telaPrincipal extends javax.swing.JFrame {
                 .addGroup(inputDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(sp1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addGroup(inputDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -146,6 +147,7 @@ public class telaPrincipal extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(527, 403));
 
         jButton1.setText("Nova Tarefa");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
