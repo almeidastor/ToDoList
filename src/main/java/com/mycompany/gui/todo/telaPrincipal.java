@@ -257,6 +257,7 @@ public class telaPrincipal extends javax.swing.JFrame {
       if(tb1.getSelectedRow() !=-1)
       editar();
       inputDialog.setVisible(true);
+      inputDialog.setLocationRelativeTo(null);
 
     }    //parte do código original                                    
 
