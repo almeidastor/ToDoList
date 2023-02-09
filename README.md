@@ -37,7 +37,7 @@ Projeto desenvolvido através da GUI-Swing de um bloco de tarefas com as funçõ
 
 ## Telas
   * Tela Principal
-<p align="center"><img src="https://github.com/almeidastor/imgsforreadme/blob/main/TodoList/Todolist.png"></p>
+<p align="center"><img src="https://github.com/almeidastor/imgsforreadme/blob/main/TodoList/Todolist1.png"></p>
 
    * Dialog de Tarefas
 <p align="center"><img src="https://github.com/almeidastor/imgsforreadme/blob/main/TodoList/Todolist2.png"></p>
