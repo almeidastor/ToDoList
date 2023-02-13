@@ -3,7 +3,7 @@
   <img src="https://img.shields.io/static/v1?label=JDK &message=v11.0.14&color=red&style=flat&logo=appveyor&logo=openjdk"/>
   <img src="https://img.shields.io/static/v1?label=Maven &message=v4.0.0&color=orange&style=flat&logo=appveyor&logo=apachemaven"/>
   <img src="http://img.shields.io/static/v1?label=SIZE&message=66.0 KB&color=blueviolet&style=flat"/>
-  <img src="http://img.shields.io/static/v1?label=STATUS&message=Concluído&color=green&style=flat"/>
+  <img src="http://img.shields.io/static/v1?label=STATUS&message=Concluído&color=GREEN&style=flat"/>
 </p>
 
  <p align="center"><img src="https://github.com/almeidastor/imgsforreadme/blob/main/TodoList/Todolist0.png"></p>
