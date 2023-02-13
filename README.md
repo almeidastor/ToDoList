@@ -6,7 +6,7 @@
   <img src="http://img.shields.io/static/v1?label=STATUS&message=Em Andamento&color=yellow&style=flat"/>
 </p>
 
- <p align="center"><img src="https://github.com/almeidastor/imgsforreadme/blob/main/TodoList/Todolist.png"></p>
+ <p align="center"><img src="https://github.com/almeidastor/imgsforreadme/blob/main/TodoList/Todolist0.png"></p>
 
 
 ### Sumário
@@ -33,6 +33,7 @@ Projeto desenvolvido através da GUI-Swing de um bloco de tarefas com as funçõ
 ## Pré-requisitos
 * <a href="https://www.oracle.com/java/technologies/downloads/#java11">JDK 11.0.14</a></p>
 * <a href="https://archive.apache.org/dist/netbeans/netbeans/12.2/">Netbeans IDE 12.2</a></p>
+* <a href="https://github.com/almeidastor/imgsforreadme/tree/main/TodoList/poi_5.0.0">poi-5.0.0</a></p>
 
 
 ## Telas
