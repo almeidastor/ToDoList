@@ -21,12 +21,13 @@
 
 ## Descrição do projeto 
 <p align="justify">
-Projeto desenvolvido através da GUI-Swing de um bloco de tarefas com as funções de Criação, Edição e Exclusão de dados.
+Projeto desenvolvido através da GUI-Swing de um bloco de tarefas com as funções de Criação, Edição e Exclusão de dados e export em arquivo de Planilha do Microsoft Excel (.xlsx).
 
 </p>
 
 ## Versionamento
 * **[09/02/2023] _Beta 1.0:_** Cria, edita e exclui tarefas da lista.
+* **[13/02/2023] _Beta 1.1:_** Exporta em Planilha.
 
 
 
