@@ -5,6 +5,20 @@
 package com.mycompany.gui.todo;
 
 import javax.swing.table.DefaultTableModel;
+import java.awt.Desktop;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 /**
  *
@@ -18,7 +32,15 @@ public class telaPrincipal extends javax.swing.JFrame {
         initComponents();
         model=(DefaultTableModel) tb1.getModel();
     }
-
+    
+    public void openFile(String file){
+        try{
+            File path = new File(file);
+            Desktop.getDesktop().open(path);
+        }catch(IOException ioe){
+            System.out.println(ioe);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -46,9 +68,9 @@ public class telaPrincipal extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         sCrollPane1 = new javax.swing.JScrollPane();
         tb1 = new javax.swing.JTable();
+        jButton7 = new javax.swing.JButton();
 
         inputDialog.setMinimumSize(new java.awt.Dimension(361, 272));
-        inputDialog.setPreferredSize(new java.awt.Dimension(361, 272));
         inputDialog.setResizable(false);
 
         jButton5.setText("Cancelar");
@@ -207,6 +229,13 @@ public class telaPrincipal extends javax.swing.JFrame {
         });
         sCrollPane1.setViewportView(tb1);
 
+        jButton7.setText("Exportar");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -222,6 +251,8 @@ public class telaPrincipal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton7)
+                        .addGap(18, 18, 18)
                         .addComponent(jButton4)))
                 .addContainerGap())
         );
@@ -235,7 +266,8 @@ public class telaPrincipal extends javax.swing.JFrame {
                     .addComponent(jButton1)
                     .addComponent(jButton2)
                     .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(jButton4)
+                    .addComponent(jButton7))
                 .addGap(15, 15, 15))
         );
 
@@ -326,6 +358,47 @@ public class telaPrincipal extends javax.swing.JFrame {
           editar();
     }//GEN-LAST:event_jButton2MouseClicked
 
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+             try{
+           JFileChooser jFileChooser = new JFileChooser();
+           jFileChooser.showSaveDialog(this);
+           File saveFile = jFileChooser.getSelectedFile();
+           
+           if(saveFile != null){
+               saveFile = new File(saveFile.toString()+".xlsx");
+               Workbook wb = new XSSFWorkbook();
+               Sheet sheet = wb.createSheet("customer");
+               
+               Row rowCol = sheet.createRow(0);
+               for(int i=0;i<tb1.getColumnCount();i++){
+                   Cell cell = rowCol.createCell(i);
+                   cell.setCellValue(tb1.getColumnName(i));
+               }
+               
+               for(int j=0;j<tb1.getRowCount();j++){
+                   Row row = sheet.createRow(j+1);
+                   for(int k=0;k<tb1.getColumnCount();k++){
+                       Cell cell = row.createCell(k);
+                       if(tb1.getValueAt(j, k)!=null){
+                           cell.setCellValue(tb1.getValueAt(j, k).toString());
+                       }
+                   }
+               }
+               FileOutputStream out = new FileOutputStream(new File(saveFile.toString()));
+               wb.write(out);
+               wb.close();
+               out.close();
+               openFile(saveFile.toString());
+           }else{
+               JOptionPane.showMessageDialog(null,"Error al generar archivo");
+           }
+       }catch(FileNotFoundException e){
+           System.out.println(e);
+       }catch(IOException io){
+           System.out.println(io);
+       }
+    }//GEN-LAST:event_jButton7ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -370,6 +443,7 @@ public class telaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
